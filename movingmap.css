@@ -54,7 +54,7 @@
     }
 
     svg {
-      background-image: url('Map.png');
+      background-image: url('map.png');
       background-size: cover;
       background-position: center;
       width: 600px;
