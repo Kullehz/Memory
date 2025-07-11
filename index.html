@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Page</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+  <!--Stylesheet-->
+  <link href="homepage.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+  <body>
+    <!--Header-->
+    <header class="header">
+        <nav class="nav">
+            <a href="preview.html" class="nav_logo">Memory Roots</a>
+
+            <!-- Hamburger Icon -->
+            <div class="nav_toggle" id="nav-toggle">
+                <i class="uil uil-bars"></i>
+            </div>
+
+            <ul class="nav_items" id="nav-items">
+                <li class="nav_item">
+                    <a href="index.html" class="nav_link">Home</a>
+                    <a href="movingmap.html" class="nav_link">Map</a>
+                </li>
+            </ul>
+            <a href="/loginpage/preview.html" class="button" id="logout-btn">Log Out</a>
+        </nav>
+    </header>
+
+    <!--Home-->
+    <section class="services">
+        <div class="carousel" id="js-carousel">
+            <div class="carousel-images">
+                <img src="/assets/kulleh.jpg" alt="Slide 1" class="carousel-image active" data-caption="Rowgene Gales: A guy who likes to play games and code" style="width: 800px;">
+                <img src="https://picsum.photos/id/1016/800/450" alt="Slide 2" class="carousel-image" data-caption="Serenity by the Lake: Nature’s Beauty">
+                <img src="https://picsum.photos/id/1018/800/450" alt="Slide 3" class="carousel-image" data-caption="City Lights: Feel the Urban Pulse">
+            </div>
+            <div class="carousel-caption" id="carouselCaption">Adventure Awaits: Explore the Mountains</div>
+            <button class="carousel-button prev" id="prevBtn" aria-label="Previous slide">&#10094;</button>
+            <button class="carousel-button next" id="nextBtn" aria-label="Next slide">&#10095;</button>
+        </div>
+
+        <!-- Logout Confirmation Modal -->
+         <div id="logoutModal" class="modal-overlay">
+            <div class="modal-box">
+                <h3>Log Out</h3>
+                <p>Are you sure you want to log out?</p>
+                <div class="modal-actions">
+                    <button id="confirmLogout" class="modal-btn confirm">Log Out</button>
+                    <button id="cancelLogout" class="modal-btn cancel">Cancel</button>
+                </div>
+            </div>
+         </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const logoutBtn = document.getElementById('logout-btn');
+                const logoutModal = document.getElementById('logoutModal');
+                const confirmLogout = document.getElementById('confirmLogout');
+                const cancelLogout = document.getElementById('cancelLogout');
+
+                if (logoutBtn) {
+                    logoutBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    logoutModal.classList.add('active');
+                    });
+                }
+
+                if (cancelLogout) {
+                    cancelLogout.addEventListener('click', function() {
+                    logoutModal.classList.remove('active');
+                    });
+                }
+
+                if (confirmLogout) {
+                    confirmLogout.addEventListener('click', function() {
+                    window.location.href = logoutBtn.getAttribute('href');
+                    });
+                }
+
+                // Optional: Close modal on ESC key
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === "Escape") {
+                    logoutModal.classList.remove('active');
+                    }
+                });
+            });
+        </script>
+  </body>
+</html>
