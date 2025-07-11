@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Login</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <!--Stylesheet-->
+    <link href="STYLES.CSS" rel="stylesheet">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <script type="module" src="login.js" defer></script>
+</head>
+
+<body>
+    <!--Header-->
+    <header class="header">
+        <nav class="nav">
+            <a href="preview.html" class="nav_logo">Memory Roots</a>
+
+            <!-- Hamburger Icon -->
+            <div class="nav_toggle" id="nav-toggle">
+                <i class="uil uil-bars"></i>
+            </div>
+
+            <ul class="nav_items" id="nav-items">
+                <li class="nav_item">
+                    <a href="preview.html" class="nav_link">Home</a>
+                    <a href="map.html" class="nav_link">Map</a>
+                    <a href="services.html" class="nav_link">Services</a>
+                    <a href="contact.html" class="nav_link">Contact</a>
+                    <a href="aboutus.html" class="nav_link">About Us</a>
+                </li>
+            </ul>
+
+            <button class="button" id="form-open">Login</button>
+        </nav>
+    </header>
+
+    <!--Home-->
+    <section class="home">
+        <div class="home-description">
+                <h2>MemoryRoots: Stories of the Past for the Future</h2>
+                <p>
+                    The project's purpose is to help alleviate existing societal problems in the Philippines, 
+                    particularly concerning the deceased. Currently, there is a significant lack of accessible 
+                    information regarding many individuals who have passed away. This issue creates 
+                    difficulties not only for families seeking to trace their lineage but also for institutions that 
+                    require accurate records. To address this gap, our project proposes the development of 
+                    a comprehensive and organized database dedicated to preserving and providing 
+                    information about the deceased. Through this program, we aim to ensure that the 
+                    memories and histories of those who came before us are properly recorded, easily 
+                    accessible, and preserved for future generations. Ultimately, our goal is to honor the 
+                    departed while fostering a deeper connection between past, present, and future 
+                    communities. Database that helps people identify information about the deceased.
+                </p>
+            </div>
+        <div class="form_container">
+            <i class="uil uil-times form_close"></i>
+            <!--Login Form-->
+            <div class="form login_form">
+                <form action="#" id="login-form">
+                    <h2>Login</h2>
+                    <div class="input_box">
+                        <input type="email" id="email" placeholder="Enter your email" required />
+                        <i class="uil uil-envelope-alt email"></i>
+                    </div>
+                    <div class="input_box">
+                        <input type="password" id="password" placeholder="Enter your password" required />
+                        <i class="uil uil-lock password"></i>
+                        <i class="uil uil-eye-slash pw_hide "></i>
+                    </div>
+                    <div class="option_field">
+                        <span class="checkbox">
+                            <input type="checkbox" id="check">
+                            <label for="check">Remember me</label>
+                        </span>
+                        <a href="#" class="forgot_pw">Forgot password?</a>
+                    </div>
+                    <button class="button" type="submit">Log In</button>
+                    <div class="login_signup">
+                        Don't have an account? <a href="#" id="signup-link">Sign Up</a>
+                    </div>
+                </form>
+            </div>
+
+            <!--Sign Up Form-->
+            <div class="form signup_form">
+                <form action="#" id="signup-form">
+                    <h2>Sign Up</h2>
+                    <div class="input_box">
+                        <input type="email" id="signup-email" placeholder="Enter your email" required />
+                        <i class="uil uil-envelope-alt email"></i>
+                    </div>
+                    <div class="input_box">
+                        <input type="password" id="signup-password" placeholder="Create password" required />
+                        <i class="uil uil-lock password"></i>
+                        <i class="uil uil-eye-slash pw_hide "></i>
+                    </div>
+                    <div class="input_box">
+                        <input type="password" id="signup-confirm" placeholder="Confirm password" required />
+                        <i class="uil uil-lock password"></i>
+                        <i class="uil uil-eye-slash pw_hide "></i>
+                    </div>
+                    <button class="button" type="submit">Sign Up</button>
+                    <div class="login_signup">
+                        Already have an account? <a href="#" id="login-link">Log In</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>    
+</body>
+</html>

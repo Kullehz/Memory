@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Login</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <!--Stylesheet-->
+    <link href="STYLES.CSS" rel="stylesheet">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <script type="module" src="login.js" defer></script>
+</head>
+
+<body class="home">
+    <!--Header-->
+    <header class="header">
+        <nav class="nav">
+            <a href="preview.html" class="nav_logo">Memory Roots</a>
+
+            <!-- Hamburger Icon -->
+            <div class="nav_toggle" id="nav-toggle">
+                <i class="uil uil-bars"></i>
+            </div>
+
+            <ul class="nav_items" id="nav-items">
+                <li class="nav_item">
+                    <a href="preview.html" class="nav_link">Home</a>
+                    <a href="map.html" class="nav_link">Map</a>
+                    <a href="services.html" class="nav_link">Services</a>
+                    <a href="contact.html" class="nav_link">Contact</a>
+                    <a href="aboutus.html" class="nav_link">About Us</a>
+                </li>
+            </ul>
+            <button class="button" id="form-open">Login</button>
+        </nav>
+    </header>
+
+    <!--Home-->
+    <section class="services">
+        <div class="carousel" id="js-carousel">
+            <div class="carousel-images">
+                <img src="/assets/kulleh.jpg" alt="Slide 1" class="carousel-image active" data-caption="Rowgene Gales: A guy who likes to play games and code" style="width: 800px;">
+                <img src="https://picsum.photos/id/1016/800/450" alt="Slide 2" class="carousel-image" data-caption="Serenity by the Lake: Nature’s Beauty">
+                <img src="https://picsum.photos/id/1018/800/450" alt="Slide 3" class="carousel-image" data-caption="City Lights: Feel the Urban Pulse">
+            </div>
+            <div class="carousel-caption" id="carouselCaption">Adventure Awaits: Explore the Mountains</div>
+            <button class="carousel-button prev" id="prevBtn" aria-label="Previous slide">&#10094;</button>
+            <button class="carousel-button next" id="nextBtn" aria-label="Next slide">&#10095;</button>
+        </div>
+        <div class="form_container">
+            <i class="uil uil-times form_close"></i>
+            <!--Login Form-->
+            <div class="form login_form">
+                <form action="#" id="login-form">
+                    <h2>Login</h2>
+                    <div class="input_box">
+                        <input type="email" id="email" placeholder="Enter your email" required />
+                        <i class="uil uil-envelope-alt email"></i>
+                    </div>
+                    <div class="input_box">
+                        <input type="password" id="password" placeholder="Enter your password" required />
+                        <i class="uil uil-lock password"></i>
+                        <i class="uil uil-eye-slash pw_hide "></i>
+                    </div>
+                    <div class="option_field">
+                        <span class="checkbox">
+                            <input type="checkbox" id="check">
+                            <label for="check">Remember me</label>
+                        </span>
+                        <a href="#" class="forgot_pw">Forgot password?</a>
+                    </div>
+                    <button class="button" type="submit">Log In</button>
+                    <div class="login_signup">
+                        Don't have an account? <a href="#" id="signup-link">Sign Up</a>
+                    </div>
+                </form>
+            </div>
+
+            <!--Sign Up Form-->
+            <div class="form signup_form">
+                <form action="#" id="signup-form">
+                    <h2>Sign Up</h2>
+                    <div class="input_box">
+                        <input type="email" id="signup-email" placeholder="Enter your email" required />
+                        <i class="uil uil-envelope-alt email"></i>
+                    </div>
+                    <div class="input_box">
+                        <input type="password" id="signup-password" placeholder="Create password" required />
+                        <i class="uil uil-lock password"></i>
+                        <i class="uil uil-eye-slash pw_hide "></i>
+                    </div>
+                    <div class="input_box">
+                        <input type="password" id="signup-confirm" placeholder="Confirm password" required />
+                        <i class="uil uil-lock password"></i>
+                        <i class="uil uil-eye-slash pw_hide "></i>
+                    </div>
+                    <button class="button" type="submit">Sign Up</button>
+                    <div class="login_signup">
+                        Already have an account? <a href="#" id="login-link">Log In</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>    
+
+    <!-- Script in carousel -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const images = document.querySelectorAll('.carousel-image');
+        const caption = document.getElementById('carouselCaption');
+        let current = 0;
+        let intervalId;
+
+        function showImage(index) {
+            images.forEach((img, i) => {
+                img.classList.toggle('active', i === index);
+            });
+            caption.textContent = images[index].getAttribute('data-caption');
+        }
+
+        function nextImage() {
+            current = (current + 1) % images.length;
+            showImage(current);
+        }
+
+        function prevImage() {
+            current = (current - 1 + images.length) % images.length;
+            showImage(current);
+        }
+
+        document.getElementById('prevBtn').addEventListener('click', () => {
+            prevImage();
+            resetInterval();
+        });
+
+        document.getElementById('nextBtn').addEventListener('click', () => {
+            nextImage();
+            resetInterval();
+        });
+
+        function startInterval() {
+            intervalId = setInterval(nextImage, 3000); // Change slide every 3 seconds
+        }
+
+        function resetInterval() {
+            clearInterval(intervalId);
+            startInterval();
+        }
+
+        showImage(current);
+        startInterval();
+    });
+    </script>
+</body>
+</html>

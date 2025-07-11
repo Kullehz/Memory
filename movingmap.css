@@ -1,0 +1,344 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+:root {
+  --primary-color: #7d2ae8;
+  --primary-hover: #5a1bbd;
+  --text-dark: #0b0217;
+  --text-light: #fff;
+  --gray: #707070;
+  --border-color: #aaaaaa;
+  --background-overlay: rgba(0, 0, 0, 0.4);
+  --transition: 0.3s ease;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  --font: "Poppins", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font);
+}
+
+a {
+  text-decoration: none;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 80px;
+  padding: 0 0px;
+  background: var(--primary-color);
+  z-index: 100;
+}
+
+.nav {
+  padding: 0px 10px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.nav_logo {
+  font-size: 30px;
+  color: var(--text-light);
+  font-weight: 600;
+}
+
+.nav_items,
+.nav_item {
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.nav_link {
+  color: var(--text-light);
+  transition: var(--transition);
+}
+
+.nav_link:hover {
+  color: #d9d9d9;
+}
+
+.button {
+  padding: 6px 24px;
+  font-size: 20px;
+  border: 2px solid var(--text-light);
+  background: transparent;
+  border-radius: var(--radius-sm);
+  color: var(--text-light);
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 2px 8px rgba(125,42,232,0.10);
+}
+
+.button:hover {
+  background: var(--text-light);
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+  box-shadow: 0 4px 16px rgba(125,42,232,0.18);
+}
+
+.button:active {
+  transform: scale(0.97);
+}
+
+/* Navigation Toggle for Mobile */
+.nav_toggle {
+  display: none;
+  font-size: 28px;
+  color: var(--text-light);
+  cursor: pointer;
+}
+
+/* Responsive Styles */
+@media (max-width: 800px) {
+  .nav_items {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background: var(--primary-color);
+    flex-direction: column;
+    padding: 20px 0;
+    display: none;
+    z-index: 200;
+  }
+
+  .nav_items.show {
+    display: flex;
+  }
+
+  .nav_item {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 24px;
+    width: 100%;
+    gap: 18px;
+  }
+
+  .nav_toggle {
+    display: block;
+  }
+
+  .button {
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .header {
+    height: 60px;
+    padding: 0 8px;
+  }
+
+  .nav_logo {
+    font-size: 18px;
+  }
+
+  .nav_item {
+    gap: 10px;
+  }
+
+  .button {
+    padding: 4px 14px;
+    font-size: 14px;
+  }
+}
+
+
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #f9f9f9;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 0px 20px 40px 0px;
+    }
+
+    header {
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      color: #333;
+    }
+
+    .map-container {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 15px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+.map {
+  min-height: 100vh;
+  width: 100vw;
+  background: linear-gradient(135deg, #f7f3ff 0%, #e3d6fa 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 120px; /* space for fixed nav */
+  box-sizing: border-box;
+}
+
+.map h1 {
+  color: var(--primary-color);
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 32px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.map-container {
+  background: #fff;
+  padding: 24px 20px 32px 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(125,42,232,0.10);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  max-width: 750px;
+  width: 100%;
+}
+
+.buttons {
+  display: flex;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.buttons button {
+  padding: 10px 24px;
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  box-shadow: 0 2px 8px rgba(125,42,232,0.10);
+}
+
+.buttons button:hover {
+  background: var(--primary-hover);
+  color: #fff;
+}
+
+svg {
+  background-image: url('/assets/map.png');
+  background-size: cover;
+  background-position: center;
+  width: 600px;
+  height: 600px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  margin-bottom: 0;
+  box-shadow: 0 2px 12px rgba(125,42,232,0.07);
+}
+
+path {
+  fill: none;
+  stroke: #999;
+  stroke-width: 5;
+}
+
+.circle {
+  fill: red;
+  offset-distance: 0%;
+  offset-rotate: auto;
+  animation: move 4s linear infinite;
+}
+
+@keyframes move {
+  to {
+    offset-distance: 100%;
+  }
+}
+
+/* Tooltip Styling */
+.tooltip-box {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  z-index: 999;
+}
+
+/* Navbar custom style */
+.navbar.navbar-expand-lg.bg-body-tertiary {
+  position: relative;
+  background-color: #f8f9fa;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+@media (max-width: 700px) {
+  .map {
+    padding-top: 90px;
+  }
+  .map-container {
+    max-width: 98vw;
+    padding: 12px 2vw 18px 2vw;
+  }
+  svg {
+    width: 90vw;
+    height: 60vw;
+    min-height: 300px;
+    min-width: 200px;
+  }
+  .buttons {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+}
